@@ -18,4 +18,5 @@ const HeaderContent = styled.div`
 
 const Title = styled.h1`
   font-size: 28px;
+  margin: 10px 0 20px;
 `;
