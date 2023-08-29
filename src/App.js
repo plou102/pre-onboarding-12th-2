@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import { styled } from 'styled-components';
 import './App.css';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContainer>
+      <Outlet />
+    </MainContainer>
   );
 }
 
 export default App;
+
+const MainContainer = styled.div`
+  width: 25%;
+  height: 65vh;
+  border-radius: 20px;
+  border: 2px solid #2e2e2e;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 5px #6e6e6e;
+`;
