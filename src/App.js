@@ -13,7 +13,7 @@ function App() {
 export default App;
 
 const MainContainer = styled.div`
-  width: 30%;
+  width: 50%;
   height: 65vh;
   border-radius: 20px;
   border: 2px solid #2e2e2e;
@@ -24,5 +24,10 @@ const MainContainer = styled.div`
   transform: translate(-50%, -50%);
   box-shadow: 5px 5px 5px #6e6e6e;
   padding: 10px 15px 0;
-  overflow: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;

@@ -28,8 +28,8 @@ const IssuesList = ({ list }) => {
       </TopContent>
 
       <BottomContent>
-        <User>작성자: {list.user.login}</User>
-        <CreateDate>작성일: {createDate}</CreateDate>
+        <span>작성자: {list.user.login}</span>
+        <span>작성일: {createDate}</span>
       </BottomContent>
     </ListContent>
   );
@@ -61,10 +61,11 @@ const Number = styled.span`
 
 const Title = styled.span`
   display: inline-block;
-  width: 65%;
+  width: 75%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 
   &:hover {
     color: #0000ff;
@@ -74,9 +75,5 @@ const Title = styled.span`
 const Conmment = styled.span`
   display: inline-block;
   text-align: right;
-  width: 20%;
+  width: 15%;
 `;
-
-const User = styled.span``;
-
-const CreateDate = styled.span``;

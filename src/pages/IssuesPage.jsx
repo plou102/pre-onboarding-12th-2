@@ -10,14 +10,14 @@ const IssuesPage = () => {
     (async () => {
       const data = await getIssues();
 
-      data.map((list, i) => {
-        if ((i + 1) % 5 === 0) {
+      for (let i = 0; i < data.length; i++) {
+        if ((i + 1) % 5 === 0 && i !== 0) {
           const Ad = {
             ad: true,
           };
-          data.splice(i + 1, 0, Ad);
+          data.splice(i, 0, Ad);
         }
-      });
+      }
 
       setListData(data);
     })();
@@ -29,7 +29,7 @@ const IssuesPage = () => {
 
       <ListContent>
         {listData.map((list, i) => {
-          return <IssuesList key={list.id} list={list} />;
+          return <IssuesList key={i} list={list} />;
         })}
       </ListContent>
     </IssuesPageContent>
