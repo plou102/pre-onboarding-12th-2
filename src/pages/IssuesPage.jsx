@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
-import { getIssues } from '../api/requests';
+// import { getIssues } from '../api/requests';
 import { styled } from 'styled-components';
 import Header from '../components/Header';
 
 const IssuesPage = () => {
   useEffect(() => {
     (async () => {
-      const data = await getIssues();
-      console.log(data);
+      // const data = await getIssues();
     })();
   }, []);
 
   return (
     <IssuesPageContent>
-      <Header></Header>
+      <Header />
     </IssuesPageContent>
   );
 };
