@@ -9,7 +9,16 @@ const IssuesPage = () => {
   useEffect(() => {
     (async () => {
       const data = await getIssues();
-      console.log(data);
+
+      data.map((list, i) => {
+        if ((i + 1) % 5 === 0) {
+          const Ad = {
+            ad: true,
+          };
+          data.splice(i + 1, 0, Ad);
+        }
+      });
+
       setListData(data);
     })();
   }, []);
@@ -19,7 +28,7 @@ const IssuesPage = () => {
       <Header />
 
       <ListContent>
-        {listData.map(list => {
+        {listData.map((list, i) => {
           return <IssuesList key={list.id} list={list} />;
         })}
       </ListContent>

@@ -1,13 +1,29 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import AdImage from '../images/ad_image.webp';
+import { useNavigate } from 'react-router-dom';
 
 const IssuesList = ({ list }) => {
-  const createDate = list.created_at.split('T')[0];
+  const navigate = useNavigate();
+  const createDate = list.created_at?.split('T')[0];
+
+  if (list.ad) {
+    return (
+      <ListContent>
+        <img
+          src={AdImage}
+          alt="Ad image"
+          onClick={() => window.open('https://www.wanted.co.kr/')}
+        />
+      </ListContent>
+    );
+  }
+
   return (
     <ListContent>
       <TopContent>
         <Number>#{list.number}</Number>
-        <Title>{list.title}</Title>
+        <Title onClick={() => navigate(`/${list.id}`)}>{list.title}</Title>
         <Conmment>코멘트: {list.comments}</Conmment>
       </TopContent>
 
@@ -40,20 +56,25 @@ const BottomContent = styled.div`
 `;
 
 const Number = styled.span`
-  display: inline;
+  font-weight: 500;
 `;
 
 const Title = styled.span`
   display: inline-block;
-  width: 70%;
+  width: 65%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  &:hover {
+    color: #0000ff;
+  }
 `;
 
 const Conmment = styled.span`
   display: inline-block;
   text-align: right;
+  width: 20%;
 `;
 
 const User = styled.span``;
