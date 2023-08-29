@@ -23,7 +23,7 @@ const IssuesList = ({ list }) => {
     <ListContent>
       <TopContent>
         <Number>#{list.number}</Number>
-        <Title onClick={() => navigate(`/${list.id}`)}>{list.title}</Title>
+        <Title onClick={() => navigate(`/${list.id}`, { state: list.number })}>{list.title}</Title>
         <Conmment>코멘트: {list.comments}</Conmment>
       </TopContent>
 

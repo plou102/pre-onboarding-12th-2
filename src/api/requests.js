@@ -9,3 +9,7 @@ const requestGet = async (path, instance) => {
 export function getIssues() {
   return requestGet('/repos/facebook/react/issues?sort=comments', defaultInstance);
 }
+
+export function getIssuesDetail(id) {
+  return requestGet(`/repos/facebook/react/issues/${id}`, defaultInstance);
+}
