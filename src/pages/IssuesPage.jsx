@@ -56,15 +56,14 @@ const IssuesPage = () => {
     <IssuesPageContent>
       <Header />
 
-      {load && <Loading />}
-
       <ListContent>
         {listData.map((list, i) => {
           return <IssuesList key={i} list={list} />;
         })}
       </ListContent>
 
-      <div className="" ref={obsRef} />
+      <Observer ref={obsRef} />
+      {load && <Loading />}
     </IssuesPageContent>
   );
 };
@@ -78,7 +77,6 @@ const ListContent = styled.div``;
 const Loading = styled.div`
   box-sizing: border-box;
   position: absolute;
-  top: 50%;
   left: 50%;
   width: 64px;
   height: 64px;
@@ -98,4 +96,8 @@ const Loading = styled.div`
       transform: rotate(360deg);
     }
   }
+`;
+
+const Observer = styled.div`
+  height: 50px;
 `;
