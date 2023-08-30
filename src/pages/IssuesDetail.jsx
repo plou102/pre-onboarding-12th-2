@@ -22,7 +22,7 @@ const IssuesDetail = () => {
         setLoad(false);
       }
     })();
-  }, []);
+  }, [location.state]);
 
   const createDate = detail.created_at?.split('T')[0];
 
