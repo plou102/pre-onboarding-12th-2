@@ -60,10 +60,12 @@ $ npm start
  ┃ ┃ ┣ 📜IssuesList.jsx
  ┃ ┃ ┗ 📜MarkdownRender.jsx
  ┃ ┣ 📂images
- ┃ ┃ ┗ 📜ad_image.webp
+ ┃ ┃ ┣ 📜ad_image.webp
+ ┃ ┃ ┗ 📜GitHub_Logo.svg
  ┃ ┣ 📂pages
  ┃ ┃ ┣ 📜IssuesDetail.jsx
- ┃ ┃ ┗ 📜IssuesPage.jsx
+ ┃ ┃ ┣ 📜IssuesPage.jsx
+ ┃ ┃ ┗ 📜NotFound.jsx
  ┃ ┣ 📜App.css
  ┃ ┣ 📜App.js
  ┃ ┣ 📜App.test.js
