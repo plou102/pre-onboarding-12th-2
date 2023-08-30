@@ -10,7 +10,7 @@ const IssuesList = ({ list }) => {
   if (list.ad) {
     return (
       <ListContent>
-        <img
+        <AdImg
           src={AdImage}
           alt="Ad image"
           onClick={() => window.open('https://www.wanted.co.kr/')}
@@ -68,7 +68,7 @@ const Title = styled.span`
   cursor: pointer;
 
   &:hover {
-    color: #0000ff;
+    color: #585858;
   }
 `;
 
@@ -76,4 +76,9 @@ const Conmment = styled.span`
   display: inline-block;
   text-align: right;
   width: 15%;
+`;
+
+const AdImg = styled.img`
+  display: block;
+  margin: 0 auto 5px;
 `;
