@@ -6,8 +6,11 @@ const requestGet = async (path, instance) => {
   });
 };
 
-export function getIssues() {
-  return requestGet('/repos/facebook/react/issues?sort=comments', defaultInstance);
+export function getIssues(page) {
+  return requestGet(
+    `/repos/facebook/react/issues?sort=comments&page=${page}&per_page=28`,
+    defaultInstance,
+  );
 }
 
 export function getIssuesDetail(id) {
