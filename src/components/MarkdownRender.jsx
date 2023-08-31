@@ -17,4 +17,15 @@ export default MarkdownRender;
 
 const MarkDownContent = styled.div`
   margin-top: 5px;
+
+  code {
+    display: block;
+    width: 100%;
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  img {
+    max-width: 100%;
+  }
 `;
